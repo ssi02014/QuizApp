@@ -103,3 +103,27 @@
   window.location.assign("./end.html");
 ```
 
+<br />
+
+### 🏃 JSON.parse(), JSON.stringfy()
+- JSON.parse() 메서드는 JSON 문자열의 구문을 분석하고, 그 결과에서 JavaScript 값이나 객체를 생성합니다.
+```js
+  const json = '{"result" : true, "count" : 42}';
+  const obj = JSON.parse(json);
+
+  console.log(obj.count); 
+  //output: 42
+```
+
+<br />
+
+- JSON.stringify() 메서드는 JavaScript 값이나 객체를 JSON 문자열로 변환합니다.
+```js
+  console.log(JSON.stringify({ x: 5, y: 6 }));
+  //output: "{"x" : 5, "y" : 6}"
+```
+
+<br />
+
+
+
