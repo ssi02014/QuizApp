@@ -10,10 +10,11 @@ const MAX_QUESTIONS = 5;
 
 let currentQuestion = {};
 let acceptingAnswers = true;
-let availableQuestions = [];
-let questions = [];
-let questionCounter = 0;
 let score = 0;
+let questionCounter = 0;
+let availableQuestions = [];
+
+let questions = [];
 
 //fetch를 이용해 json 파일 받아오기
 fetch("question.json")
@@ -41,22 +42,17 @@ startGame = () => {
 getNewQuestion = () => {
   if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
     localStorage.setItem("mostRecentScore", score);
-
     return window.location.assign("./end.html");
   }
 
   questionCounter++;
 
-  //Update the Progress Text
   progressText.innerText = `Question ${questionCounter} / ${MAX_QUESTIONS}`;
 
-  //Update the Progress Bar
   progressBarFull.style.width = `${(questionCounter / MAX_QUESTIONS) * 100}%`;
 
   const questionIndex = Math.floor(Math.random() * availableQuestions.length);
-
   currentQuestion = availableQuestions[questionIndex];
-
   question.innerHTML = currentQuestion.question;
 
   choices.forEach((choice) => {
@@ -81,7 +77,9 @@ choices.forEach((choice) => {
     let classToApply =
       selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
 
-    if (classToApply === "correct") incrementScore(CORRECT_BOUNS);
+    if (classToApply === "correct") {
+      incrementScore(CORRECT_BOUNS);
+    }
 
     selectedChoice.parentElement.classList.add(classToApply);
 
