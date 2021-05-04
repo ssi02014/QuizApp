@@ -79,7 +79,7 @@ choices.forEach((choice) => {
     const selectedAnswer = selectedChoice.dataset["number"]; //data-number="1"에서 1을 의미
 
     let classToApply =
-      selectedAnswer === currentQuestion.answer ? "correct" : "incorrect";
+      selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
 
     if (classToApply === "correct") incrementScore(CORRECT_BOUNS);
 
