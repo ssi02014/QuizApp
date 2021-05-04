@@ -4,7 +4,7 @@
 
 <br />
 
-## 🎥 App View
+## 🎥 App View (Live Server)
 ### 📺 index.html
 ![index](https://user-images.githubusercontent.com/64779472/117028488-b9170700-ad38-11eb-8d7d-4c7a613de4ec.PNG)
 
